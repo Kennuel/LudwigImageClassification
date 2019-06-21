@@ -9,7 +9,12 @@ input_features:
           num_channels: 3
         conv_layers:
             -
-                num_filters: 32
+                num_filters: 16
+                filter_size: 2
+                pool_size: 2
+                dropout: false
+            -
+                num_filters: 16
                 filter_size: 2
                 pool_size: 2
                 dropout: false
@@ -19,6 +24,32 @@ input_features:
                 dropout: true
             -
                 fc_size: 256
+                dropout: true
+    -
+        name: image_path
+        type: image
+        encoder: stacked_cnn
+        preprocessing:
+          width: 64
+          height: 64 
+          num_channels: 3
+        conv_layers:
+            -
+                num_filters: 16
+                filter_size: 8
+                pool_size: 2
+                dropout: false
+            -
+                num_filters: 16
+                filter_size: 2
+                pool_size: 2
+                dropout: false
+        fc_layers:
+            -
+                fc_size: 256
+                dropout: true
+            -
+                fc_size: 128
                 dropout: true
 
 output_features:

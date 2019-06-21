@@ -9,9 +9,9 @@ input_features:
           num_channels: 3
         conv_layers:
             -
-                num_filters: 32
-                filter_size: 4
-                pool_size: 4
+                num_filters: 16
+                filter_size: 2
+                pool_size: 2
                 dropout: false
             -
                 num_filters: 16
@@ -20,10 +20,10 @@ input_features:
                 dropout: false
         fc_layers:
             -
-                fc_size: 256
+                fc_size: 512
                 dropout: true
             -
-                fc_size: 64
+                fc_size: 256
                 dropout: true
 
 output_features:
@@ -33,4 +33,4 @@ output_features:
 
 training:
     dropout_rate: 0.2
-    batch_size: 32
+    batch_size: 64

@@ -20,10 +20,10 @@ input_features:
                 dropout: false
         fc_layers:
             -
-                fc_size: 256
+                fc_size: 512
                 dropout: true
             -
-                fc_size: 64
+                fc_size: 256
                 dropout: true
 
 output_features:
