@@ -4,20 +4,20 @@ input_features:
         type: image
         encoder: stacked_cnn
         preprocessing:
-          width: 256
-          height: 256
+          width: 64
+          height: 64 
           num_channels: 3
         conv_layers:
             -
                 num_filters: 32
-                filter_size: 4
-                pool_size: 4
-                dropout: true
+                filter_size: 2
+                pool_size: 2
+                dropout: false
             -
                 num_filters: 16
                 filter_size: 2
                 pool_size: 2
-                dropout: true
+                dropout: false
         fc_layers:
             -
                 fc_size: 256
