@@ -1,0 +1,36 @@
+input_features:
+    -
+        name: image_path
+        type: image
+        encoder: stacked_cnn
+        preprocessing:
+          width: 512
+          height: 512 
+          num_channels: 3
+        conv_layers:
+            -
+                num_filters: 32
+                filter_size: 4
+                pool_size: 4
+                dropout: true
+            -
+                num_filters: 16
+                filter_size: 2
+                pool_size: 2
+                dropout: true
+        fc_layers:
+            -
+                fc_size: 256
+                dropout: true
+            -
+                fc_size: 64
+                dropout: true
+
+output_features:
+    -
+        name: label
+        type: category
+
+training:
+    dropout_rate: 0.2
+    batch_size: 32
