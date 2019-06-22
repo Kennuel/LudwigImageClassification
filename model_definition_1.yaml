@@ -33,4 +33,4 @@ output_features:
 
 training:
     dropout_rate: 0.2
-    batch_size: 32
+    batch_size: 16
