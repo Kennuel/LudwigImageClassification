@@ -9,7 +9,7 @@ input_features:
           num_channels: 3
         conv_layers:
             -
-                num_filters: 32
+                num_filters: 16
                 filter_size: 2
                 pool_size: 2
                 dropout: false
@@ -18,6 +18,12 @@ input_features:
                 filter_size: 2
                 pool_size: 2
                 dropout: false
+        
+
+output_features:
+    -
+        name: label
+        type: category
         fc_layers:
             -
                 fc_size: 512
@@ -26,11 +32,6 @@ input_features:
                 fc_size: 256
                 dropout: true
 
-output_features:
-    -
-        name: label
-        type: category
-
 training:
-    dropout_rate: 0.2
+    dropout_rate: 0.3
     batch_size: 16

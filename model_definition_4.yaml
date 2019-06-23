@@ -32,5 +32,5 @@ output_features:
         type: category
 
 training:
-    dropout_rate: 0.2
+    dropout_rate: 0.3
     batch_size: 16

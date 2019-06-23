@@ -18,12 +18,17 @@ input_features:
                 filter_size: 2
                 pool_size: 2
                 dropout: false
+            -
+                num_filters: 16
+                filter_size: 2
+                pool_size: 2
+                dropout: false
         fc_layers:
             -
-                fc_size: 512
+                fc_size: 1024
                 dropout: true
             -
-                fc_size: 256
+                fc_size: 512
                 dropout: true
 
 output_features:
