@@ -1,19 +1,20 @@
-#accuracy: 0.6298701298701299
+#accuracy: 0.6366233766233766
 #hits_at_k: 1.0
-#loss: 0.5971093140639268
-#overall_stats: { 'avg_f1_score_macro': 0.5836309295452305,
-#  'avg_f1_score_micro': 0.6298701298701299,
-#  'avg_f1_score_weighted': 0.5788736618578675,
-
+#loss: 0.601285001891
+#overall_stats: { 'avg_f1_score_macro': 0.5941864648454791,
+#  'avg_f1_score_micro': 0.6366233766233766,
+#  'avg_f1_score_weighted': 0.5896871296208346,
+  
 input_features:
     -
         name: image_path
         type: image
         encoder: stacked_cnn
+        pool_stride : 2
         preprocessing:
           width: 64
           height: 64 
-          num_channels: 3
+          num_channels: 1
         conv_layers:
             -
                 num_filters: 16
@@ -42,10 +43,10 @@ output_features:
                 fc_size: 1024
                 dropout: true
             -
-                fc_size: 512
+                fc_size: 256
                 dropout: true
             -
-                fc_size: 256
+                fc_size: 64
                 dropout: true
 
 training:

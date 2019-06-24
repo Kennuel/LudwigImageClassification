@@ -10,10 +10,11 @@ input_features:
         name: image_path
         type: image
         encoder: stacked_cnn
+        pool_stride : 2
         preprocessing:
           width: 64
           height: 64 
-          num_channels: 3
+          num_channels: 1
         conv_layers:
             -
                 num_filters: 16
@@ -42,9 +43,12 @@ output_features:
                 fc_size: 1024
                 dropout: true
             -
-                fc_size: 512
+                fc_size: 256
+                dropout: true
+            -
+                fc_size: 64
                 dropout: true
 
 training:
     dropout_rate: 0.35
-    batch_size: 16
+    batch_size: 32
