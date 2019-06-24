@@ -12,13 +12,28 @@ input_features:
                 num_filters: 16
                 filter_size: 2
                 pool_size: 2
-                dropout: false
+                dropout: true
             -
                 num_filters: 16
                 filter_size: 2
                 pool_size: 2
-                dropout: false
+                dropout: true
+            -
+                num_filters: 16
+                filter_size: 2
+                pool_size: 2
+                dropout: true
+        
+
+output_features:
+    -
+        name: label
+        type: category
+        reduce_inputs: concat
         fc_layers:
+            -
+                fc_size: 1024
+                dropout: true
             -
                 fc_size: 512
                 dropout: true
@@ -26,11 +41,6 @@ input_features:
                 fc_size: 256
                 dropout: true
 
-output_features:
-    -
-        name: label
-        type: category
-
 training:
-    dropout_rate: 0.3
+    dropout_rate: 0.35
     batch_size: 16
