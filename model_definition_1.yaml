@@ -1,3 +1,10 @@
+#accuracy: 0.6366233766233766
+#hits_at_k: 1.0
+#loss: 0.601285001891
+#overall_stats: { 'avg_f1_score_macro': 0.5941864648454791,
+#  'avg_f1_score_micro': 0.6366233766233766,
+#  'avg_f1_score_weighted': 0.5896871296208346,
+  
 input_features:
     -
         name: image_path
@@ -14,7 +21,7 @@ input_features:
                 pool_size: 2
                 dropout: true
             -
-                num_filters: 16
+                num_filters: 32
                 filter_size: 2
                 pool_size: 2
                 dropout: true
@@ -36,9 +43,6 @@ output_features:
                 dropout: true
             -
                 fc_size: 512
-                dropout: true
-            -
-                fc_size: 256
                 dropout: true
 
 training:
