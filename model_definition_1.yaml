@@ -36,7 +36,7 @@ input_features:
 output_features:
     -
         name: label
-        type: category
+        type: binary
         reduce_inputs: concat
         fc_layers:
             -
